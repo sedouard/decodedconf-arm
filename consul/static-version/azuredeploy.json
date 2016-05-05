@@ -77,34 +77,7 @@
       "location": "[resourceGroup().location]", 
       "apiVersion": "[variables('apiVersion')]", 
       "name": "[variables('storageAccountName')]"
-    }, 
-    {
-      "name": "'publicIP0", 
-      "apiVersion": "[variables('apiVersion')]", 
-      "location": "[resourceGroup().location]", 
-      "type": "Microsoft.Network/publicIPAddresses", 
-      "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
-      }
     },
-    {
-      "name": "'publicIP1", 
-      "apiVersion": "[variables('apiVersion')]", 
-      "location": "[resourceGroup().location]", 
-      "type": "Microsoft.Network/publicIPAddresses", 
-      "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
-      }
-    },
-    {
-      "name": "'publicIP2", 
-      "apiVersion": "[variables('apiVersion')]", 
-      "location": "[resourceGroup().location]", 
-      "type": "Microsoft.Network/publicIPAddresses", 
-      "properties": {
-        "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
-      }
-    }, 
     {
       "properties": {}, 
       "type": "Microsoft.Compute/availabilitySets", 
@@ -500,75 +473,6 @@
             }
           ]
         }
-      }
-    },
-    {
-      "name": "[concat(parameters('appPrefix'), '_vm', '0', '/extension')]", 
-      "apiVersion": "[variables('apiVersion')]", 
-      "location": "[resourceGroup().location]", 
-      "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', parameters('appPrefix'), '_vm', '0')]"
-      ],
-      "type": "Microsoft.Compute/virtualMachines/extensions", 
-      "properties": {
-        "autoUpgradeMinorVersion": true, 
-        "typeHandlerVersion": "1.4", 
-        "settings": {
-          "fileUris": [
-            "[variables('customScriptFilePath')]"
-          ]
-        }, 
-        "protectedSettings": { 
-            "commandToExecute": "[concat(variables('customScriptCommandToExecute'),' ', parameters('existingAtlasInfraName'), ' ', parameters('existingAtlasToken'))]"
-        },
-        "type": "CustomScriptForLinux", 
-        "publisher": "Microsoft.OSTCExtensions"
-      }
-    },
-    {
-      "name": "[concat(parameters('appPrefix'), '_vm', '1', '/extension')]", 
-      "apiVersion": "[variables('apiVersion')]", 
-      "location": "[resourceGroup().location]", 
-      "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', parameters('appPrefix'), '_vm', '1')]"
-      ],
-      "type": "Microsoft.Compute/virtualMachines/extensions", 
-      "properties": {
-        "autoUpgradeMinorVersion": true, 
-        "typeHandlerVersion": "1.4", 
-        "settings": {
-          "fileUris": [
-            "[variables('customScriptFilePath')]"
-          ]
-        }, 
-        "protectedSettings": { 
-            "commandToExecute": "[concat(variables('customScriptCommandToExecute'),' ', parameters('existingAtlasInfraName'), ' ', parameters('existingAtlasToken'))]"
-        },
-        "type": "CustomScriptForLinux", 
-        "publisher": "Microsoft.OSTCExtensions"
-      }
-    },
-    {
-      "name": "[concat(parameters('appPrefix'), '_vm', '2', '/extension')]", 
-      "apiVersion": "[variables('apiVersion')]", 
-      "location": "[resourceGroup().location]", 
-      "dependsOn": [
-        "[concat('Microsoft.Compute/virtualMachines/', parameters('appPrefix'), '_vm', '2')]"
-      ],
-      "type": "Microsoft.Compute/virtualMachines/extensions", 
-      "properties": {
-        "autoUpgradeMinorVersion": true, 
-        "typeHandlerVersion": "1.4", 
-        "settings": {
-          "fileUris": [
-            "[variables('customScriptFilePath')]"
-          ]
-        }, 
-        "protectedSettings": { 
-            "commandToExecute": "[concat(variables('customScriptCommandToExecute'),' ', parameters('existingAtlasInfraName'), ' ', parameters('existingAtlasToken'))]"
-        },
-        "type": "CustomScriptForLinux", 
-        "publisher": "Microsoft.OSTCExtensions"
       }
     }
   ]
