@@ -86,6 +86,17 @@ table {
   color: #f20540;
 }
 
+.cloud-icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.impress-enabled .step .active {
+    opacity: 1 !important;
+}
+.impress-enabled .step .slide {
+    opacity: 0 !important;
+}
 /*
     Now here is when interesting things start to appear.
 
@@ -184,6 +195,24 @@ a:focus {
     line-height: 1.5;
 }
 
+.step.large-step {
+    width: 1800px;
+}
+
+.step.med-step {
+    width: 1200px;
+}
+
+.step.overview-slide.future {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.consul-image {
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
 /*
     ... and we enhance the styles for impress.js.
 
@@ -191,7 +220,7 @@ a:focus {
 */
 .impress-enabled .step {
     margin: 0;
-    opacity: 0.3;
+    opacity: 0.0;
 
     -webkit-transition: opacity 1s;
     -moz-transition:    opacity 1s;
@@ -258,6 +287,9 @@ a:focus {
 .font-12 {
     font-size: 12px;
 }
+.font-20 {
+    font-size: 20px;
+}
 .font-24 {
     font-size: 24px;
 }
@@ -271,8 +303,8 @@ a:focus {
     padding: 0;
 }
 .code-label {
-  margin-top: 40px;
-  font-size: 42px;
+  margin-top: 48px;
+  font-size: 30px;
 }
 #title .try {
     font-size: 64px;
@@ -550,11 +582,9 @@ a:focus {
     We also make other steps visible and give them a pointer cursor using the
     `impress-on-` class.
 */
-.impress-on-overview .step {
-    opacity: 1;
-    cursor: pointer;
+.no-dim {
+    opacity: 1 !important;
 }
-
 
 /*
     Now, when we have all the steps styled let's give users a hint how to navigate

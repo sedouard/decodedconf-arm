@@ -1,0 +1,28 @@
+{
+    "resources": [
+        {
+            "name": "[concat(parameters('appPrefix'),'_VNET')]", 
+            "apiVersion": "[variables('apiVersion')]", 
+            "location": "[resourceGroup().location]", 
+            "dependsOn": [
+                "[concat('Microsoft.Network/networkSecurityGroups/', parameters('appPrefix'),'_SG')]"
+            ], 
+            "type": "Microsoft.Network/virtualNetworks", 
+            "properties": {
+                "subnets": [
+                {
+                    "name": "[variables('subnet1Name')]", 
+                    "properties": {
+                    "addressPrefix": "[variables('subnet1Prefix')]"
+                    }
+                }
+                ], 
+                "addressSpace": {
+                "addressPrefixes": [
+                    "[variables('addressPrefix')]"
+                ]
+                }
+            }
+        }
+    ]
+}

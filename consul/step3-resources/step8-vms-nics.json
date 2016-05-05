@@ -1,0 +1,43 @@
+{
+    "resources": [
+        {
+            "name": "[concat(parameters('appPrefix'),'_nic1', copyindex())]", 
+            "apiVersion": "[variables('apiVersion')]", 
+            "location": "[resourceGroup().location]", 
+            "dependsOn": [
+                "[concat('Microsoft.Network/publicIPAddresses/', 'publicIP', copyindex())]", 
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('appPrefix'),'_VNET')]", 
+                "[concat('Microsoft.Network/loadBalancers/', parameters('appPrefix'),'_LB')]"
+            ], 
+            "copy": {
+                "count": "[variables('numberOfInstances')]", 
+                "name": "nicLoop"
+            }, 
+            "type": "Microsoft.Network/networkInterfaces", 
+            "properties": {
+                "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', concat(parameters('appPrefix'),'_SG'))]"
+                }, 
+                "ipConfigurations": [
+                {
+                    "name": "ipconfig1", 
+                    "properties": {
+                    "subnet": {
+                        "id": "[variables('subnet1Ref')]"
+                    }, 
+                    "privateIPAllocationMethod": "Dynamic", 
+                    "loadBalancerBackendAddressPools": [
+                        {
+                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', concat(parameters('appPrefix'),'_LB')),'/backendAddressPools/loadBalancerBackEnd')]"
+                        }
+                    ], 
+                    "publicIPAddress": {
+                        "id": "[resourceId('Microsoft.Network/publicIpAddresses', concat('publicIP', copyindex()))]"
+                    }
+                    }
+                }
+                ]
+            }
+        }
+    ]
+}

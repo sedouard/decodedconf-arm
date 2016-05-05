@@ -1,0 +1,28 @@
+{
+    "resources": [
+        {
+            "properties": {
+                "securityRules": [
+                {
+                    "name": "ssh_rule", 
+                    "properties": {
+                    "priority": 100, 
+                    "direction": "Inbound", 
+                    "protocol": "Tcp", 
+                    "description": "Allow external SSH", 
+                    "access": "Allow", 
+                    "destinationPortRange": "22", 
+                    "sourcePortRange": "*", 
+                    "destinationAddressPrefix": "*", 
+                    "sourceAddressPrefix": "Internet"
+                    }
+                }
+                ]
+            }, 
+            "type": "Microsoft.Network/networkSecurityGroups", 
+            "location": "[resourceGroup().location]", 
+            "apiVersion": "[variables('apiVersion')]", 
+            "name": "[concat(parameters('appPrefix'),'_SG')]"
+        }
+    ]
+}

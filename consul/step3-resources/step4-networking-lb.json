@@ -1,0 +1,61 @@
+{
+    "resources": [
+        {
+            "name": "[concat(parameters('appPrefix'),'_LB')]", 
+            "apiVersion": "[variables('apiVersion')]", 
+            "location": "[resourceGroup().location]", 
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/', parameters('appPrefix'),'_VNET')]"
+            ], 
+            "type": "Microsoft.Network/loadBalancers", 
+            "properties": {
+                "frontendIPConfigurations": [
+                {
+                    "name": "loadBalancerFrontEnd", 
+                    "properties": {
+                    "subnet": {
+                        "id": "[variables('subnet1Ref')]"
+                    }
+                    }
+                }
+                ], 
+                "loadBalancingRules": [
+                {
+                    "name": "lbrule", 
+                    "properties": {
+                    "frontendIPConfiguration": {
+                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', concat(parameters('appPrefix'),'_LB')), '/frontendIpConfigurations/loadBalancerFrontEnd')]"
+                    }, 
+                    "backendPort": 8500, 
+                    "probe": {
+                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', concat(parameters('appPrefix'),'_LB')), '/probes/lbprobe')]"
+                    }, 
+                    "protocol": "Tcp", 
+                    "backendAddressPool": {
+                        "id": "[concat(resourceId('Microsoft.Network/loadBalancers', concat(parameters('appPrefix'),'_LB')), '/backendAddressPools/loadBalancerBackEnd')]"
+                    }, 
+                    "frontendPort": 8500, 
+                    "idleTimeoutInMinutes": 15
+                    }
+                }
+                ], 
+                "backendAddressPools": [
+                {
+                    "name": "loadBalancerBackEnd"
+                }
+                ], 
+                "probes": [
+                {
+                    "name": "lbprobe", 
+                    "properties": {
+                    "protocol": "Tcp", 
+                    "numberOfProbes": 2, 
+                    "intervalInSeconds": 15, 
+                    "port": 8500
+                    }
+                }
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "variables": {
+        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetIDRef'))]", 
+        "subnet1Name": "Subnet-1", 
+        "vmStorageAccountContainerName": "vhds", 
+        "addressPrefix": "10.0.0.0/16", 
+        "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', variables('subnet1Name'))]", 
+        "subnet1Prefix": "10.0.0.0/24", 
+        "publicIPAddressType": "Dynamic", 
+        "vnetIDRef": "[concat(parameters('appPrefix'),'_VNET')]",
+        "imagePublisher": "Canonical", 
+        "customScriptFilePath": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/consul-on-ubuntu/install-consul.sh", 
+        "vmStorageAccountContainerName": "vhds", 
+        "numberOfInstances": 3, 
+        "customScriptCommandToExecute": "bash install-consul.sh", 
+        "imageSKU": "14.04.3-LTS", 
+        "imageOffer": "UbuntuServer", 
+        "storageAccountName": "[concat(uniqueString(resourceGroup().id), parameters('appPrefix'))]",
+        "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]",
+        "apiVersion": "2015-06-15"
+    }
+}

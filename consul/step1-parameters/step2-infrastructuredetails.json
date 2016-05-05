@@ -1,0 +1,9 @@
+{
+    "appPrefix": {
+        "type": "string",
+        "metadata": {
+            "description": "Prefix for each component name (VMs, networks, etc)"
+        },
+        "maxLength": 11
+    }
+}

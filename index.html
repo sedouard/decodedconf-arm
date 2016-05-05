@@ -6,10 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    <title>Deploy What You Know &amp; Love: Azure Templates</title>
     
-    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
-    <meta name="author" content="Bartek Szopka" />
+    <meta name="description" content="Azure" />
+    <meta name="author" content="Steven Edouard" />
 
     <!--
         
@@ -102,14 +102,15 @@
         It will not be rotated or scaled.
 
     -->
+    <section>
     <div id="bored" class="step slide fa" data-x="-1000" data-y="-1500">
       <div class="row">
-        <div class="fa fa-2x text-white">Deploy What You Know</div>
+        <div class="fa fa-2x text-white">Deploy What</div>
       </div>
       <br/>
       <div class="row">
         <div class="col-md-12 col-md-offset-4">
-          <div class="fa fa-2x text-white">&amp; <i class="fa fa-heart text-red"></i></div>
+          <div class="fa fa-2x text-white">You Know &amp; <i class="fa fa-heart text-red"></i></div>
         </div>
       </div>
       <br/>
@@ -158,44 +159,51 @@
         <br/>
         <br/>
         <br/>
-        <q class="text-white text-center">Traditionally, cloud infrastructure is deployed like this...</q>
+        <q class="text-white text-center">Traditionally, automated deployments are done like this...</q>
     </div>
 
-    <div class="step its-in-3d" data-x="0" data-y="-1500" data-z="-1000" data-rotate-x="45">
+    <div class="step" data-x="0" data-y="-2750" data-z="-4000" data-rotate-x="90">
       <div class="row ">
-        <span class="col-md-3">
+        <span class="col-md-2">
           <p class="fa font-24 text-white code-label">Step 1:</p>
         </span>
-        <span class="col-md-9">
-          <pre><code class="language-python" style="font-size: 20px">
+        <span class="col-md-10">
+          <pre><code class="language-python" style="font-size: 18px">
 vpc.createVPC('vpc-name', subnetconfiguration)
           </code></pre>
         </span>
       </div>
-      <br/>
+   </div>
+   <div class="step" data-x="0" data-y="-2500" data-z="-4000">
       <div class="row">
-        <span class="col-md-3">
+        <span class="col-md-2">
           <p class="fa fa-2x text-white code-label">Step 2:</p>
         </span>
-        <span class="col-md-9">
-          <pre><code class="language-python" style="font-size: 20px">
+        <span class="col-md-10">
+          <pre><code class="language-python" style="font-size: 18px">
 ec2.createInstnace('instance-name', subnetconfiguration)
           </code></pre>
         </span>
       </div>
-      <br/>
+    </div>
+    <div class="step" data-x="0" data-y="-2250" data-z="-4050" data-rotate-x="-90">
       <div class="row">
-        <span class="col-md-3">
+        <span class="col-md-2">
           <p class="fa fa-2x text-white code-label">Step 3:</p>
         </span>
-        <span class="col-md-9">
-          <pre><code class="language-python" style="font-size: 20px">
+        <span class="col-md-10">
+          <pre><code class="language-python" style="font-size: 18px">
 ec2.createElasticIP('ip-name', subnetconfiguration)
           </code></pre>
         </span>
       </div>
     </div>
-
+    <div class="step slide" data-x="1000" data-y="-1500">
+        <br/>
+        <br/>
+        <br/>
+        <q class="text-white text-center">Wouldn't it be nice to just say what you want to deploy and let the cloud figure out the details?</q>
+    </div>
     <!--
         
         This is an example of step element being scaled.
@@ -206,7 +214,7 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
         down (4 times) to make it back to its correct size.
         
     -->
-    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+    <div id="title" class="step" data-x="2000" data-y="0" data-scale="4">
       <div class="row">
         <span class="try text-white">then you should try</span>
       </div>
@@ -217,14 +225,14 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
       </div>
         
     </div>
-    <div class="step slide" data-x="1000" data-y="-1500">
+    <div class="step slide" data-x="2000" data-y="-1500">
       <div class="row">
         <q class="text-white text-left" style="margin-top:-10px">Here's the <strong class="text-yellow">bright</strong> idea:</q>
         <br/>
       </div>
       <div class="row">
         <div class="col-md-8">
-        <q class="text-white text-left">Cloud Infrastructure Should be <u>Deployed</u> and <u>Updated</u> using <u>templating language</u></q>
+        <q class="text-white text-left"><u>Desired State</u> deployments using <u>templating language</u> for the cloud</q>
         </div>
       </div>
       <div class="row">
@@ -243,7 +251,11 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
           <span class="footnote text-white">Except in JSON, and for your Cloud Things</span>
       </div>
     </div>
-
+    <div class="step" data-x="1000" data-y="-10000" data-scale="4" data-rotate="90">
+      <div class="row">
+        <img style="width: 1000px" src="app/img/decodeddiagram.png"/>
+      </div>
+    </div>
     <!--
         
         So to summarize of all the possible attributes used to position presentation steps, we have:
@@ -272,7 +284,7 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
       </div>
       
     </div>
-    <div class="step" data-x="-7500" data-y="-5500" data-z="1000" data-rotate="0">
+    <div class="step overview-slide" data-x="-8200" data-y="-5500" data-z="1000" data-rotate="0">
       <div class="row">
         <span class="try text-white text-center">Parameters</span>
       </div>
@@ -304,7 +316,7 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
           <span class="footnote text-white" style="font-size: 32px">Define what inputs a template takes. These values can be interpolated later within the template.</span>
       </div>
     </div>
-    <div class="step" data-x="-6000" data-y="-5500" data-z="1000" data-rotate="0" data-scale="1">
+    <div class="step overview-slide" data-x="-6700" data-y="-5500" data-z="1000" data-rotate="0" data-scale="1">
       <div class="row">
         <span class="fa try text-white text-center">Variables</span>
       </div>
@@ -312,21 +324,38 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
         <pre><code class="language-json" style="font-size: 18px">
 "variables": {
   "vmStorageAccountContainerName": "vhd",
-  "jumpboxTemplateName": "jumpbox-resources-",
+  "_comment1": "we can reference parameters anywhere!"
+  "jumpboxTemplateName": "[parameters('base-name')]",
   "tshirtSizeS": {
     "numberOfZookeeperInstances": 1,
     "numberOfKafkaInstances": 3,
     "vmSize": "Standard_A1"
   },
-  "_comment": "we can set variables, to other variables, too!"
+  "_comment2": "we can set variables, to other variables, too!"
   "numberOfZookeeperInstances": "[variables('tshirtSizeS').numberOfZookeeperInstances]"
 }
         </code></pre>
       </div>
       <span class="fa text-white text-center">Like in programming languages, you can define variables for use throughout your template.</span>
     </div>
-
-    <div class="step" data-x="-4500" data-y="-5500" data-z="1000" data-rotate="0" data-scale="1">
+     <div class="step overview-slide" data-x="-5100" data-y="-5500" data-z="1000" data-rotate="0" data-scale="1">
+      <div class="row">
+        <span class="fa try text-white text-center">Built-in Functions</span>
+      </div>
+      <div class="row">
+      <pre><code class="language-json" style="font-size: 18px">
+"examples": {
+  "subscriptionId": "[subscriptionId()]",
+  "resourceGroupName": "[resourceGroup().name]",
+  "_comment": "twoStrings => 'hellothere'",
+  "twoStrings": "[concat('hello', 'there')]",
+  "_comment2": "the best way to generate a unique string",
+  "uniqueString": "[uniqueString(resourceGroup().name)]"
+}
+</code></pre>
+      </div>
+    </div>
+    <div class="step overview-slide" data-x="-3700" data-y="-5500" data-z="1000" data-rotate="0" data-scale="1">
       <div class="row">
         <span class="fa try text-white text-center">Resource Properties</span>
       </div>
@@ -361,9 +390,9 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
 ]
         </code></pre>
       </div>
-      <span class="fa text-white text-center">Define the Azure resources you want to deploy.</span>
+      <span class="fa text-white text-center">Define the 'stuff' you want to deploy.</span>
     </div>
-    <div class="step" data-x="-5000" data-y="-5500" data-z="-4000" data-rotate="90">
+    <div class="step" data-x="-500" data-y="-6000" data-z="-4000" data-rotate="90">
       <div class="row">
         <span class="fa try text-white text-center">Every Resource has These:</span>
       </div>
@@ -390,16 +419,147 @@ ec2.createElasticIP('ip-name', subnetconfiguration)
         </code></pre>
       </div>
     </div>
-    <div class="step" data-x="-6000" data-y="-5500" data-z="-4000" data-rotate="90" data-scale="1">
+
+    <div class="step" data-x="-2000" data-y="-5500" data-z="-4000" data-rotate="90" data-scale="1">
       <span class="fa text-white text-center">But most importantly...</span>
     </div>
-    <div class="step" data-x="-6000" data-y="-5800" data-z="-7000" data-rotate="90" data-scale="1">
-      <span class="fa text-white text-center">Define Dependencies</span>
+    <div class="step" data-x="-4500" data-y="-5800" data-z="-7000" data-rotate="90" data-scale="1">
+      <div class="row">
+        <span class="fa text-white text-center">You can Define Dependencies!</span>
+      </div>
+      <pre><code class="language-json font-20">
+  "dependsOn": [
+    "Microsoft.Compute/virtualMachines/anotherVirtualMachine1",
+    "Microsoft.Compute/virtualMachines/anotherVirtualMachine2"
+  ]
+        </code></pre>
+    </div>
+    
+    <div class="step" data-x="-4500" data-y="-5800" data-z="-7000" data-rotate="90" data-rotate-x="90" data-scale="1">
+      <div class="row">
+        <span class="fa text-white text-center">You know how in programming you can do:</span>
+      </div>
+      <pre><code class="language-js font-20">
+  for (var i in someArray) {
+    // do stuff
+  }
+        </code></pre>
+    </div>
+    <div class="step" data-x="-4500" data-y="-5800" data-z="-7000" data-rotate-x="180" data-scale="1">
+      <div class="row">
+        <span class="fa text-white text-center">Or with HTML Templating</span>
+      </div>
+      <pre><code class="language-handlebars font-20">
+{{#each someArray as element}}
+  <ul>Here is my {{element}}</ul>
+{{/each}}
+        </code></pre>
+    </div>
+    <div class="step med-step" data-x="-4500" data-y="-5800" data-z="-7000" data-rotate-x="270" data-scale="1">
+      <div class="row">
+        <span class="fa text-white text-center">We can do the same thing!</span>
+      </div>
+      <pre><code class="language-json font-20">
+{
+    "_comment": "copyIndex() => the current index of iteration"
+    "name": "[concat('publicIP', copyindex())]", // eg: publicIP0
+    "apiVersion": "[variables('apiVersion')]", 
+    "location": "[resourceGroup().location]", 
+    "copy": {
+        "count": "[variables('numberOfInstances')]", 
+        "name": "ipLoop" // we can depend on this loop with this name
+    }, 
+    "type": "Microsoft.Network/publicIPAddresses", 
+    "properties": {
+        "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
+    }
+}
+        </code></pre>
+    </div>
+
+    <div class="step" data-x="-3500" data-y="-5800" data-z="-7000" data-rotate="90" data-scale="1">
+      <div class="row">
+        <div class="col-md-12 text-white text-center">
+          Enough with the Fancy Slides...
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-white text-center">
+        Let's deploy a
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-12">
+          <img class="consul-image" style="width:400px" src="app/img/consul.png">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center text-white">
+          <br/>
+            Cluster
+        </div>
+      </div>
+    </div>
+
+    <div class="step" data-x="-1000" data-y="-5800" data-z="-7000" data-rotate="90" data-scale="1">
+      <div class="row">
+        <span class="fa text-white text-center">We will need:</span>
+      </div>
+      <br/>
+      <div class="row">
+        <div class="col-md-2">
+          <img class="cloud-icon cloud-ingredient" src="app/img/vm.png">
+        </div>
+        <div class="col-md-9">
+          <span class="fa text-white"> 3 Virtual Machines</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 text-center">
+          <img class="cloud-icon cloud-ingredient" src="app/img/nic.png">
+        </div>
+        <div class="col-md-9">
+          <span class="fa text-white"> 3 Network Interfaces</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 cloud-ingredient">
+          <img class="cloud-icon" style="width:100px" src="app/img/vnet.png">
+        </div>
+        <div class="col-md-9">
+          <span class="fa text-white"> 1 Virtual Network</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 cloud-ingredient">
+          <img class="cloud-icon" src="app/img/storageaccount.png">
+        </div>
+        <div class="col-md-9">
+          <span class="fa text-white"> 1 Disk Storage Account</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2 cloud-ingredient">
+          <img class="cloud-icon" src="app/img/installationscript.png">
+        </div>
+        <div class="col-md-9">
+          <span class="fa text-white"> 1 Custom Script Extension</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="step large-step" data-x="1500" data-y="-5800" data-z="-7000" data-rotate="90" data-scale="1">
+      <div class="row text-white">
+        Here's that infrastructure done visually:
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <iframe style="width:100%; height:800px" src="http://armviz.io/#/?load=https:%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2Fconsul-on-ubuntu%2Fazuredeploy.json"></iframe>
+        </div>
+      </div>
     </div>
 </div>
-<footer>
-  <p>Visit me at <a href="http://www.andismith.com" target="_blank">AndiSmith.com</a></p>
-</footer>
+
 <!--
     
     Hint is not related to impress.js in any way.

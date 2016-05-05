@@ -1,0 +1,17 @@
+{
+    "resources": [
+        {
+            "name": "[concat('publicIP', copyindex())]",
+            "apiVersion": "[variables('apiVersion')]", 
+            "location": "[resourceGroup().location]", 
+            "copy": {
+                "count": "[variables('numberOfInstances')]", 
+                "name": "ipLoop"
+            }, 
+            "type": "Microsoft.Network/publicIPAddresses", 
+            "properties": {
+                "publicIPAllocationMethod": "[variables('publicIPAddressType')]"
+            }
+        }
+    ]
+}
