@@ -1,0 +1,13 @@
+{
+    "resources": [
+        {
+            "properties": {
+                "accountType": "Standard_LRS"
+            }, 
+            "type": "Microsoft.Storage/storageAccounts", 
+            "location": "[resourceGroup().location]",
+            "apiVersion": "[variables('apiVersion')]", 
+            "name": "[variables('storageAccountName')]"
+        }
+    ]
+}

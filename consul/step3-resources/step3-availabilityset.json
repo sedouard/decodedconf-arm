@@ -1,11 +1,11 @@
 {
     "resources": [
         {
-        "properties": {}, 
-        "type": "Microsoft.Compute/availabilitySets", 
-        "location": "[resourceGroup().location]", 
-        "apiVersion": "[variables('apiVersion')]", 
-        "name": "[concat(parameters('appPrefix'),'_AS')]"
+            "properties": {}, 
+            "type": "Microsoft.Compute/availabilitySets", 
+            "location": "[resourceGroup().location]", 
+            "apiVersion": "[variables('apiVersion')]", 
+            "name": "[concat(parameters('appPrefix'),'_AS')]"
         }
     ]
 }

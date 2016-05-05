@@ -191,7 +191,7 @@
       }
     }, 
     {
-      "name": "[concat(parameters('appPrefix'),'_nic1', '0']", 
+      "name": "[concat(parameters('appPrefix'),'_nic1', '0')]", 
       "apiVersion": "[variables('apiVersion')]", 
       "location": "[resourceGroup().location]", 
       "dependsOn": [
@@ -226,7 +226,7 @@
       }
     },
     {
-      "name": "[concat(parameters('appPrefix'),'_nic1', '1']", 
+      "name": "[concat(parameters('appPrefix'),'_nic1', '1')]", 
       "apiVersion": "[variables('apiVersion')]", 
       "location": "[resourceGroup().location]", 
       "dependsOn": [
@@ -261,7 +261,7 @@
       }
     },
     {
-      "name": "[concat(parameters('appPrefix'),'_nic1', '2']", 
+      "name": "[concat(parameters('appPrefix'),'_nic1', '2')]", 
       "apiVersion": "[variables('apiVersion')]", 
       "location": "[resourceGroup().location]", 
       "dependsOn": [
@@ -296,7 +296,7 @@
       }
     },
     {
-      "name": "[concat(parameters('appPrefix'), '_vm', '0']", 
+      "name": "[concat(parameters('appPrefix'), '_vm', '0')]", 
       "apiVersion": "[variables('apiVersion')]", 
       "location": "[resourceGroup().location]", 
       "dependsOn": [
@@ -356,7 +356,7 @@
       }
     },
     {
-      "name": "[concat(parameters('appPrefix'), '_vm', '1']", 
+      "name": "[concat(parameters('appPrefix'), '_vm', '1')]", 
       "apiVersion": "[variables('apiVersion')]", 
       "location": "[resourceGroup().location]", 
       "dependsOn": [
@@ -416,7 +416,7 @@
       }
     },
     {
-      "name": "[concat(parameters('appPrefix'), '_vm', '2']", 
+      "name": "[concat(parameters('appPrefix'), '_vm', '2')]", 
       "apiVersion": "[variables('apiVersion')]", 
       "location": "[resourceGroup().location]", 
       "dependsOn": [
