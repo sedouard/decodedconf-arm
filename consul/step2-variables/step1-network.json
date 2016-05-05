@@ -1,0 +1,12 @@
+{
+   "variables": {
+        "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', variables('vnetIDRef'))]", 
+        "subnet1Name": "Subnet-1", 
+        "vmStorageAccountContainerName": "vhds", 
+        "addressPrefix": "10.0.0.0/16", 
+        "subnet1Ref": "[concat(variables('vnetID'),'/subnets/', variables('subnet1Name'))]", 
+        "subnet1Prefix": "10.0.0.0/24", 
+        "publicIPAddressType": "Dynamic", 
+        "vnetIDRef": "[concat(parameters('appPrefix'),'_VNET')]"
+    }
+}

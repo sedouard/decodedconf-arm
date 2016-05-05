@@ -1,0 +1,13 @@
+{
+    "variables": {
+        "imagePublisher": "Canonical", 
+        "customScriptFilePath": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/consul-on-ubuntu/install-consul.sh", 
+        "vmStorageAccountContainerName": "vhds", 
+        "numberOfInstances": 3, 
+        "customScriptCommandToExecute": "bash install-consul.sh", 
+        "imageSKU": "14.04.3-LTS", 
+        "imageOffer": "UbuntuServer", 
+        "storageAccountName": "[concat(uniqueString(resourceGroup().id), parameters('appPrefix'))]",
+        "sshKeyPath": "[concat('/home/',parameters('adminUsername'),'/.ssh/authorized_keys')]"
+    }
+}

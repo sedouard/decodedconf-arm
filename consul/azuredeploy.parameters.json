@@ -1,0 +1,24 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "appPrefix": {
+            "value": "sedouard"
+        },
+        "adminUsername": {
+            "value": "sedouard"
+        },
+        "sshKeyData": {
+            "value": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC9JaapZD/Ok52Ysb11s90rQEomt5SHmH2KZDuEBmdsdy/TnDhdxMw1CUFPElNzPYkUohfE9v4dfP6+Wp54yrsWEKlvkAWVNooflStEgWJJUmCdKw1aHHEmpB2ADjDECOmYVUxe3FsrYsimIF0f1F+StF/R1tNEFNy3yS/jBBiJDLL4aO8A6v20zkh3gMNyvDjIrys7Rp4w1qTelXiJmuZd36NUkkAg57wTKZfx3j1wMf3a4jEwvplTMfXBrZxCRqxY6Zr+DtDDlNO3RdQjNeGAhCndWSBLoUhVmj9wvAucasI2O2JwEVnVT6kgt1Np3CTlXFz44I2H2pm5X5vv1dgV sedouard@Stevens-MacBook-Pro.local"
+        },
+        "vmsize": {
+            "value": "Standard_A1"
+        },
+        "existingAtlasInfraName": {
+            "value": "sedouard/infrastructure"
+        },
+        "existingAtlasToken": {
+            "value": "t0AOsLW1YvD1Aw.atlasv1.VXRz7XOWKA9zn2YqpuEsrjsrUFXqza8sN9kM1fDEczfp7bam1Psy8zghAoWLKuPNzRk"
+        }
+    }
+}

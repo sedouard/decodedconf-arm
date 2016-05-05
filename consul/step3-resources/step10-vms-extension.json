@@ -1,0 +1,31 @@
+{
+    "resources": [
+        {
+            "name": "[concat(parameters('appPrefix'), '_vm', copyIndex(), '/extension')]", 
+            "apiVersion": "[variables('apiVersion')]", 
+            "location": "[resourceGroup().location]", 
+            "dependsOn": [
+                "[concat('Microsoft.Compute/virtualMachines/', parameters('appPrefix'), '_vm', copyIndex())]"
+            ], 
+            "copy": {
+                "count": "[variables('numberOfInstances')]", 
+                "name": "virtualMachineLoop"
+            }, 
+            "type": "Microsoft.Compute/virtualMachines/extensions", 
+            "properties": {
+                "autoUpgradeMinorVersion": true, 
+                "typeHandlerVersion": "1.4", 
+                "settings": {
+                "fileUris": [
+                    "[variables('customScriptFilePath')]"
+                ]
+                }, 
+                "protectedSettings": { 
+                    "commandToExecute": "[concat(variables('customScriptCommandToExecute'),' ', parameters('existingAtlasInfraName'), ' ', parameters('existingAtlasToken'))]"
+                },
+                "type": "CustomScriptForLinux", 
+                "publisher": "Microsoft.OSTCExtensions"
+            }
+        }
+    ]
+}

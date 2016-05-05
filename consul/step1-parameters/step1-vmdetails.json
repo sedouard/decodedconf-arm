@@ -1,0 +1,29 @@
+{
+    "adminUsername": {
+        "type": "string", 
+        "metadata": {
+            "description": "Admin username for VM"
+        }
+    },
+    "sshKeyData": {
+        "type": "string", 
+        "metadata": {
+            "description": "SSH Public key for VMs"
+        }
+    },
+    "vmSize": {
+        "defaultValue": "Standard_A1", 
+        "metadata": {
+            "description": "Size of the Virtual Machine."
+        }, 
+        "type": "string", 
+        "allowedValues": [
+            "Standard_A1", 
+            "Standard_A2", 
+            "Standard_A3", 
+            "Standard_D1_v2", 
+            "Standard_D2_v2", 
+            "Standard_D3_v2"
+        ]
+    }
+}
